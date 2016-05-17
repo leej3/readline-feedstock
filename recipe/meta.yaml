@@ -20,14 +20,14 @@ source:
 
 build:
   skip: true  # [win]
-  number: 0
+  number: 1
 
 requirements:
   build:
     - pkg-config
-    - ncurses
+    - ncurses 5.9*
   run:
-    - ncurses
+    - ncurses 5.9*
 
 test:
   commands:
