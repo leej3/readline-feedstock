@@ -1,4 +1,4 @@
-{% set version = "6.3" %}
+{% set version = "7.0" %}
 
 package:
   name: readline
@@ -7,20 +7,12 @@ package:
 source:
   url: ftp://ftp.gnu.org/gnu/readline/readline-{{ version }}.tar.gz
   fn: readline-{{ version }}.tar.gz
-  md5: 33c8fb279e981274f485fd91da77e94a
+  sha256: 56ba6071b9462f980c5a72ab0023893b65ba6debb4eeb475d7a563dc65cafd43
   patches:
-    - patches/readline63-001
-    - patches/readline63-002
-    - patches/readline63-003
-    - patches/readline63-004
-    - patches/readline63-005
-    - patches/readline63-006
-    - patches/readline63-007
-    - patches/readline63-008
+    - patches/readline70-001
 
 build:
   skip: true  # [win]
-  number: 1
 
 requirements:
   build:
