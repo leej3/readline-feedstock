@@ -6,19 +6,25 @@ package:
 
 source:
   url: ftp://ftp.gnu.org/gnu/readline/readline-{{ version }}.tar.gz
-  fn: readline-{{ version }}.tar.gz
   sha256: 750d437185286f40a369e1e4f4764eda932b9459b5ec9a731628393dd3d32334
   patches:
     - patches/readline70-001
+    - patches/readline70-002
+    - patches/readline70-003
+    - patches/readline70-004
+    - patches/readline70-005
 
 build:
   skip: true  # [win]
-  number: 0
+  number: 1
+  run_exports:
+    # change soname at major ver: https://abi-laboratory.pro/tracker/timeline/readline/
+    - {{ pin_subpackage('readline') }}
 
 requirements:
   build:
-    - {{ compiler('c') }}
     - pkg-config
+    - {{ compiler('c') }}
   host:
     - ncurses
   run:
@@ -32,13 +38,13 @@ test:
   ] %}
   {% for lib in readline_libs %}
     - test -f ${PREFIX}/lib/{{ lib }}.a
-    - test -f ${PREFIX}/lib/{{ lib }}.so      # [linux]
-    - test -f ${PREFIX}/lib/{{ lib }}.dylib   # [osx]
+    - test -f ${PREFIX}/lib/{{ lib }}${SHLIB_EXT}  # [not win]
   {% endfor %}
 
 about:
   home: https://cnswww.cns.cwru.edu/php/chet/readline/rltop.html
-  license: GPL3
+  license: GPL-3.0
+  license_file: COPYING
   summary: library for editing command lines as they are typed in
 
 extra:
@@ -49,3 +55,6 @@ extra:
     - pelson
     - msarahan
     - asmeurer
+    - msarahan
+    - mingwandroid
+    - ocefpaf
