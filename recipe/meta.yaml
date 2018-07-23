@@ -46,12 +46,6 @@ about:
   license: GPL-3.0
   license_file: COPYING
   summary: library for editing command lines as they are typed in
-  description: |
-    The standard Python readline extension statically linked against the GNU
-    readline library.
-  doc_url: https://pypi.python.org/pypi/readline
-  dev_url: https://github.com/ludwigschwardt/python-gnureadline
-  doc_source_url: https://github.com/ludwigschwardt/python-gnureadline
 
 extra:
   recipe-maintainers:
