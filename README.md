@@ -3,12 +3,14 @@ About readline
 
 Home: https://cnswww.cns.cwru.edu/php/chet/readline/rltop.html
 
-Package license: GPL3
+Package license: GPL-3.0
 
 Feedstock license: BSD 3-Clause
 
 Summary: library for editing command lines as they are typed in
 
+The standard Python readline extension statically linked against the GNU
+readline library.
 
 
 Current build status
