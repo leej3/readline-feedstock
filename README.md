@@ -9,8 +9,6 @@ Feedstock license: BSD 3-Clause
 
 Summary: library for editing command lines as they are typed in
 
-The standard Python readline extension statically linked against the GNU
-readline library.
 
 
 Current build status
