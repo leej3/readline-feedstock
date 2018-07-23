@@ -17,10 +17,12 @@ build:
 
 requirements:
   build:
+    - {{ compiler('c') }}
     - pkg-config
-    - ncurses 5.9*
+  host:
+    - ncurses
   run:
-    - ncurses 5.9*
+    - ncurses
 
 test:
   commands:
