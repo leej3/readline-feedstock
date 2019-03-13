@@ -25,6 +25,7 @@ requirements:
   build:
     - pkg-config
     - {{ compiler('c') }}
+    - make
   host:
     - ncurses
   run:
