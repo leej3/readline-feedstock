@@ -10,7 +10,7 @@ source:
 
 build:
   skip: true  # [win]
-  number: 0
+  number: 1
   run_exports:
     # change soname at major ver: https://abi-laboratory.pro/tracker/timeline/readline/
     - {{ pin_subpackage('readline') }}
@@ -32,7 +32,7 @@ test:
     'libhistory'
   ] %}
   {% for lib in readline_libs %}
-    - test -f ${PREFIX}/lib/{{ lib }}.a
+    - test ! -f ${PREFIX}/lib/{{ lib }}.a
     - test -f ${PREFIX}/lib/{{ lib }}${SHLIB_EXT}  # [not win]
   {% endfor %}
 
