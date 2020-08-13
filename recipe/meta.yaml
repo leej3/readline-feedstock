@@ -20,6 +20,7 @@ requirements:
     - pkg-config
     - {{ compiler('c') }}
     - make
+    - libtool
   host:
     - ncurses
   run:
@@ -38,7 +39,7 @@ test:
 
 about:
   home: https://cnswww.cns.cwru.edu/php/chet/readline/rltop.html
-  license: GPL-3.0
+  license: GPL-3.0-only
   license_file: COPYING
   summary: library for editing command lines as they are typed in
 
