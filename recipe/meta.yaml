@@ -20,7 +20,7 @@ requirements:
     - pkg-config
     - {{ compiler('c') }}
     - make
-    - autoconf
+    - libtool
   host:
     - ncurses
   run:
